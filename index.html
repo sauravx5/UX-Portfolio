@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurav Kumar — Network Command</title>
+  <meta name="description" content="Portfolio of Saurav Kumar, Senior Product Manager specializing in enterprise telecom platforms, GIS visualization, and AI-powered network operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="landing-body">
+
+  <!-- Background grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- Landing Page -->
+  <main class="landing" id="landing">
+
+    <!-- Nav -->
+    <nav class="landing-nav">
+      <span class="nav-logo">SK<span class="nav-dot">.</span></span>
+      <span class="nav-meta font-mono">Senior PM · Telecom</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <!-- Profile avatar -->
+      <div class="avatar-wrap">
+        <div class="avatar" id="avatar">
+          <span class="avatar-initials">SK</span>
+        </div>
+        <div class="avatar-badge" title="Online">
+          <span class="badge-dot"></span>
+        </div>
+      </div>
+
+      <!-- Status line -->
+      <p class="status-line font-mono" aria-label="System status">
+        :: SYSTEM ONLINE · COMMANDER DETECTED ::
+      </p>
+
+      <!-- Headline -->
+      <h1 class="hero-headline">
+        <span class="headline-word">NETWORK</span>
+        <span class="headline-word accent-word">COMMAND</span>
+      </h1>
+
+      <p class="hero-sub font-mono">THE LIVING TELECOM SYSTEM</p>
+
+      <!-- Description -->
+      <p class="hero-desc">
+        Enter the command center of <strong>Saurav Kumar</strong>, Senior Product Manager<br />
+        specializing in AI-powered enterprise telecom platforms.
+      </p>
+
+      <!-- Meta tags -->
+      <div class="meta-tags font-mono">
+        <span>11 Yrs Experience</span>
+        <span class="meta-sep">·</span>
+        <span>Verizon</span>
+        <span class="meta-sep">·</span>
+        <span>GIS Visualization</span>
+        <span class="meta-sep">·</span>
+        <span>Network Intelligence</span>
+      </div>
+
+      <!-- CTA -->
+      <a href="map.html" class="cta-btn" id="enter-btn">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        ENTER COMMAND CENTER
+      </a>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num" data-target="90">0</span><span class="stat-unit">%</span>
+          <p class="stat-label font-mono">COMPLEXITY REDUCED</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="50">0</span><span class="stat-unit">%+</span>
+          <p class="stat-label font-mono">EFFORT SAVED</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="10">0</span><span class="stat-unit">K+</span>
+          <p class="stat-label font-mono">ENGINEERS SERVED</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer font-mono">
+      <span>© 2025 Saurav Kumar</span>
+      <span class="meta-sep">·</span>
+      <span>Built with MapLibre GL JS + Three.js</span>
+    </footer>
+
+  </main>
+
+  <script>
+    // Count-up animation on stat numbers
+    function countUp(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const dur = 1800;
+      const start = performance.now();
+      function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(ease * target);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    // Trigger on scroll into view
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.stat-num').forEach(n => countUp(n));
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(document.querySelector('.stats-grid'));
+
+    // CTA hover ripple
+    document.getElementById('enter-btn').addEventListener('mouseenter', function() {
+      this.classList.add('hovered');
+    });
+    document.getElementById('enter-btn').addEventListener('mouseleave', function() {
+      this.classList.remove('hovered');
+    });
+  </script>
+</body>
+</html>

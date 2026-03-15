@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Command — Map View</title>
+  <meta name="description" content="Interactive network command center map — explore telecom zones across the city." />
+
+  <!-- MapLibre GL JS -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@5.1.0/dist/maplibre-gl.js"></script>
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Three.js import map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <style>
+    body { margin: 0; padding: 0; }
+    html, body, #map { height: 100%; }
+    .maplibregl-ctrl-attrib { font-size: 0.6rem !important; }
+    .maplibregl-ctrl-bottom-right { bottom: 80px !important; }
+  </style>
+</head>
+<body class="map-body">
+
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav id="map-nav">
+    <a href="index.html" class="map-nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Back
+    </a>
+    <div class="nav-divider"></div>
+    <span class="map-nav-title">Network Command Center</span>
+    <span class="map-nav-subtitle font-mono">NYC Metro · 5 Zones Active</span>
+    <div class="online-badge">
+      <span class="online-dot"></span>
+      LIVE
+    </div>
+  </nav>
+
+  <!-- Zone Legend -->
+  <div id="zone-legend">
+    <span style="font-family:var(--mono);font-size:0.6rem;color:var(--panel-muted);letter-spacing:2px;margin-right:4px;">ZONES</span>
+    <span class="legend-item" data-zone="zone1">
+      <span class="legend-dot"></span> Planning
+    </span>
+    <span class="legend-item" data-zone="zone2">
+      <span class="legend-dot"></span> Network Tower
+    </span>
+    <span class="legend-item" data-zone="zone3">
+      <span class="legend-dot"></span> Operations
+    </span>
+    <span class="legend-item" data-zone="zone4">
+      <span class="legend-dot"></span> Consumer
+    </span>
+    <span class="legend-item" data-zone="hall">
+      <span class="legend-dot"></span> Achievements
+    </span>
+  </div>
+
+  <!-- Right Side Panel -->
+  <aside id="zone-panel" role="complementary" aria-label="Zone details">
+
+    <div class="panel-header">
+      <div class="panel-icon" id="panel-icon">🗺️</div>
+      <div class="panel-header-text">
+        <div class="panel-tag" id="panel-tag">ZONE 01</div>
+        <div class="panel-title" id="panel-title">Loading...</div>
+      </div>
+      <button class="panel-close" id="panel-close" aria-label="Close panel">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="panel-body" id="panel-body">
+      <!-- Content injected by JS -->
+    </div>
+
+  </aside>
+
+  <script type="module" src="src/map-main.js"></script>
+</body>
+</html>
