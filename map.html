@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +14,9 @@
   <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Three.js import map -->
@@ -27,12 +30,27 @@
   </script>
 
   <style>
-    body { margin: 0; padding: 0; }
-    html, body, #map { height: 100%; }
-    .maplibregl-ctrl-attrib { font-size: 0.6rem !important; }
-    .maplibregl-ctrl-bottom-right { bottom: 80px !important; }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body,
+    #map {
+      height: 100%;
+    }
+
+    .maplibregl-ctrl-attrib {
+      font-size: 0.6rem !important;
+    }
+
+    .maplibregl-ctrl-bottom-right {
+      bottom: 80px !important;
+    }
   </style>
 </head>
+
 <body class="map-body">
 
   <!-- Map container -->
@@ -42,17 +60,19 @@
   <nav id="map-nav">
     <a href="index.html" class="map-nav-back">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
       Back
     </a>
     <div class="nav-divider"></div>
     <span class="map-nav-title">Network Command Center</span>
-    <span class="map-nav-subtitle font-mono">NYC Metro · 4 Zones Active</span>
+
+    <span class="map-nav-subtitle font-mono"> 4 Zones </span>
     <div class="online-badge">
       <span class="online-dot"></span>
       LIVE
     </div>
+
     <div class="nav-divider"></div>
     <button class="about-btn" id="about-btn" aria-label="About Me">
       <img src="avatar.jpg" alt="SK" class="about-btn-avatar" />
@@ -62,7 +82,8 @@
 
   <!-- Zone Legend -->
   <div id="zone-legend">
-    <span style="font-family:var(--mono);font-size:0.6rem;color:var(--panel-muted);letter-spacing:2px;margin-right:4px;">ZONES</span>
+    <span
+      style="font-family:var(--mono);font-size:0.6rem;color:var(--panel-muted);letter-spacing:2px;margin-right:4px;">ZONES</span>
     <span class="legend-item" data-zone="zone1">
       <span class="legend-dot"></span> Planning
     </span>
@@ -88,7 +109,7 @@
       </div>
       <button class="panel-close" id="panel-close" aria-label="Close panel">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         </svg>
       </button>
     </div>
@@ -108,7 +129,7 @@
       <!-- Close -->
       <button class="about-modal-close" id="about-modal-close" aria-label="Close">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         </svg>
       </button>
 
@@ -133,8 +154,14 @@
 
             <!-- Bio -->
             <div class="about-bio">
-              <p>Senior UX Strategist with 11 years of experience designing enterprise platforms for telecom network operations, AI-augmented workflows, and geospatial intelligence systems. At Verizon, led UX architecture for platforms that consolidated 10+ legacy tools, cut planning cycles from five weeks to hours, and reduced engineer diagnostic effort by more than 50%.</p>
-              <p>Experienced across the full design lifecycle: user research, information architecture, interaction design, prototyping, and cross-functional stakeholder alignment. Work regularly involves GenAI integration, LLM-powered interfaces, GIS visualization, and Agile delivery within large engineering organizations.</p>
+              <p>Senior UX Strategist with 11 years of experience designing enterprise platforms for telecom network
+                operations, AI-augmented workflows, and geospatial intelligence systems. At Verizon, led UX architecture
+                for platforms that consolidated 10+ legacy tools, cut planning cycles from five weeks to hours, and
+                reduced engineer diagnostic effort by more than 50%.</p>
+              <p>Experienced across the full design lifecycle: user research, information architecture, interaction
+                design, prototyping, and cross-functional stakeholder alignment. Work regularly involves GenAI
+                integration, LLM-powered interfaces, GIS visualization, and Agile delivery within large engineering
+                organizations.</p>
             </div>
 
             <!-- Timeline -->
@@ -244,7 +271,8 @@
       <!-- ─── SECTION 3: CONTACT ─────────────── -->
       <div class="about-section contact-section">
         <p class="about-supertitle font-mono">:: OPEN CHANNEL :: CONTACT COMMAND ::</p>
-        <h3 class="contact-headline">Ready to discuss telecom UX challenges, AI-powered platforms,<br/>or design opportunities? Open a comm channel.</h3>
+        <h3 class="contact-headline">Ready to discuss telecom UX challenges, AI-powered platforms,<br />or design
+          opportunities? Open a comm channel.</h3>
 
         <div class="contact-grid">
           <!-- Contact details -->
@@ -254,9 +282,11 @@
               <span class="contact-stat">10+ <span>Enterprise Platforms</span></span>
             </div>
             <ul class="contact-list font-mono">
-              <li><span class="cl-label">EMAIL</span><a href="mailto:saurav.kumar1@outlook.com">saurav.kumar1@outlook.com</a></li>
+              <li><span class="cl-label">EMAIL</span><a
+                  href="mailto:saurav.kumar1@outlook.com">saurav.kumar1@outlook.com</a></li>
               <li><span class="cl-label">PHONE</span><a href="tel:+917416459550">+91 7416459550</a></li>
-              <li><span class="cl-label">LINKEDIN</span><a href="https://linkedin.com/in/saurav-kumar-ux-architect" target="_blank">saurav-kumar-ux-architect</a></li>
+              <li><span class="cl-label">LINKEDIN</span><a href="https://linkedin.com/in/saurav-kumar-ux-architect"
+                  target="_blank">saurav-kumar-ux-architect</a></li>
               <li><span class="cl-label">LOCATION</span><span>Hyderabad, India</span></li>
             </ul>
           </div>
@@ -311,4 +341,5 @@
     }
   </script>
 </body>
+
 </html>
