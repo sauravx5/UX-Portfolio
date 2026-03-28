@@ -414,13 +414,77 @@ html, body { width: 100%; height: 100%; font-family: var(--font); }
 .maplibregl-popup-close-button { color: #71717a !important; padding: 8px !important; }
 .maplibregl-popup-tip { display: none !important; }
 
-/* Responsive */
+/* ════════════════════════════════════════════════
+   RESPONSIVE — Mobile (≤640px)
+   ════════════════════════════════════════════════ */
 @media (max-width: 640px) {
+
+  /* Landing page */
   .hero-headline { font-size: 2.5rem; gap: 8px; }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  #zone-panel { width: 100%; top: auto; height: 60vh; transform: translateY(100%); border-left: none; border-top: 1px solid var(--panel-border); }
+  .hero { padding: 32px 16px 32px; }
+  .meta-tags { font-size: 0.65rem; gap: 5px; }
+
+  /* ── Map nav: icon-only back, compress title ── */
+  #map-nav {
+    padding: 10px 12px;
+    gap: 10px;
+    height: 52px;
+  }
+  .back-text { display: none; }            /* hide "Back" text, keep arrow icon */
+  .map-nav-back { padding: 6px 8px; }
+  .map-nav-title { font-size: 0.78rem; }
+  .map-nav-subtitle { display: none; }    /* hide "4 Zones" on small screens */
+  .about-btn span { display: none; }      /* hide "About Me" text, keep avatar */
+  .about-btn { padding: 4px 6px; gap: 0; }
+  .nav-divider { display: none; }
+  .online-badge { padding: 3px 8px; font-size: 0.6rem; }
+
+  /* ── Zone legend: full-width pinned bottom bar ── */
+  #zone-legend {
+    display: flex;           /* override the old display:none */
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    transform: none;         /* cancel desktop translateX(-50%) */
+    border-radius: 0;
+    border-left: none; border-right: none; border-bottom: none;
+    border-top: 1px solid var(--panel-border);
+    padding: 9px 12px;
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    height: 48px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
+    z-index: 100;
+  }
+  #zone-legend::-webkit-scrollbar { display: none; }
+  .legend-item { font-size: 0.7rem; padding: 2px 8px; }
+
+  /* ── Zone panel: slide up from bottom, above legend ── */
+  #zone-panel {
+    width: 100%;
+    top: 52px;            /* below nav */
+    right: 0; left: 0;
+    height: calc(100vh - 52px - 48px);  /* full minus nav + legend */
+    bottom: 48px;
+    border-left: none;
+    border-top: 1px solid var(--panel-border);
+    transform: translateY(110%);
+  }
   #zone-panel.open { transform: translateY(0); }
-  #zone-legend { display: none; }
+
+  /* ── About modal: full screen on mobile ── */
+  .about-modal { padding: 0; align-items: stretch; }
+  .about-modal-inner {
+    border-radius: 0; border: none;
+    padding: 24px 16px 40px;
+    min-height: 100vh;
+  }
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .maplibregl-ctrl-bottom-right { bottom: 56px !important; }
 }
 
 /* ════════════════════════════════════════════════

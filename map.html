@@ -62,7 +62,7 @@
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
         <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
       </svg>
-      Back
+      <span class="back-text">Back</span>
     </a>
     <div class="nav-divider"></div>
     <span class="map-nav-title">Network Command Center</span>
@@ -274,41 +274,18 @@
         <h3 class="contact-headline">Ready to discuss telecom UX challenges, AI-powered platforms,<br />or design
           opportunities? Open a comm channel.</h3>
 
-        <div class="contact-grid">
-          <!-- Contact details -->
-          <div class="contact-details">
-            <div class="contact-stat-row">
-              <span class="contact-stat">11+ <span>Years Experience</span></span>
-              <span class="contact-stat">10+ <span>Enterprise Platforms</span></span>
-            </div>
-            <ul class="contact-list font-mono">
-              <li><span class="cl-label">EMAIL</span><a
-                  href="mailto:saurav.kumar1@outlook.com">saurav.kumar1@outlook.com</a></li>
-              <li><span class="cl-label">PHONE</span><a href="tel:+917416459550">+91 7416459550</a></li>
-              <li><span class="cl-label">LINKEDIN</span><a href="https://linkedin.com/in/saurav-kumar-ux-architect"
-                  target="_blank">saurav-kumar-ux-architect</a></li>
-              <li><span class="cl-label">LOCATION</span><span>Hyderabad, India</span></li>
-            </ul>
-          </div>
-
-          <!-- Contact form -->
-          <form class="contact-form" onsubmit="handleContactSubmit(event)">
-            <div class="form-group">
-              <label for="cf-name" class="font-mono">NAME</label>
-              <input type="text" id="cf-name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="cf-email" class="font-mono">EMAIL</label>
-              <input type="email" id="cf-email" placeholder="your@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="cf-msg" class="font-mono">MESSAGE</label>
-              <textarea id="cf-msg" rows="4" placeholder="Your message..." required></textarea>
-            </div>
-            <button type="submit" class="transmit-btn font-mono">▶ TRANSMIT MESSAGE</button>
-            <p class="form-success hidden" id="form-success">✓ Message transmitted. Standing by for response.</p>
-          </form>
+        <div class="contact-stat-row">
+          <span class="contact-stat">11+ <span>Years Experience</span></span>
+          <span class="contact-stat">10+ <span>Enterprise Platforms</span></span>
         </div>
+        <ul class="contact-list font-mono">
+          <li><span class="cl-label">EMAIL</span><a
+              href="mailto:saurav.kumar1@outlook.com">saurav.kumar1@outlook.com</a></li>
+          <li><span class="cl-label">PHONE</span><a href="tel:+917416459550">+91 7416459550</a></li>
+          <li><span class="cl-label">LINKEDIN</span><a href="https://linkedin.com/in/saurav-kumar-ux-architect"
+              target="_blank">saurav-kumar-ux-architect</a></li>
+          <li><span class="cl-label">LOCATION</span><span>Hyderabad, India</span></li>
+        </ul>
       </div>
 
     </div><!-- /.about-modal-inner -->
@@ -333,12 +310,6 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') { modal.classList.add('hidden'); document.body.style.overflow = ''; }
     });
-    // Contact form
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      document.getElementById('form-success').classList.remove('hidden');
-      e.target.reset();
-    }
   </script>
 </body>
 
