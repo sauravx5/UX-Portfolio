@@ -1,98 +1,87 @@
 // map-zones.js — Zone definitions with real-world coordinates + metadata
 
-// All zones placed in Midtown Manhattan as a symbolic "city"
-// Each zone is a few blocks apart so they're visible at zoom 14
 export const ZONES = [
   {
     id: 'zone1',
-    name: 'Planning District',
-    tag: 'ZONE 01 — CELL SITE PLANNING',
+    name: 'Planning Zone',
+    tag: 'iCSP — INTELLIGENT CELL SITE PLACEMENT',
     icon: '🗺️',
-    color: '#18181b',      // zinc-900 (dark marker)
-    accentBg: '#f4f4f5',   // zinc-100
     coords: [-73.9875, 40.7580],  // Times Square area
-    height: 120,           // 3D tower height in meters
-    desc: 'Transformed manual, swivel-chair network planning into a unified self-serve design studio. Engineers design smarter, faster, with real-time intelligence.',
+    height: 140,
+    desc: 'GIS-powered infrastructure planning tool for RF and transport engineering teams.',
     achievements: [
-      { stat: 30, suffix: '%', label: 'Faster deployment cycles' },
-      { stat: 10, suffix: 'K+', label: 'Engineers on platform' },
+      { stat: 90, suffix: '%', label: 'Reduction in multi-system swivel-chair operations' },
+      { stat: 30, suffix: '%', label: 'Faster cell site deployment cycles' },
     ],
-    tools: ['GIS Engine', 'React', 'Node.js', 'PostgreSQL', 'Spatial Algorithms'],
+    impact: [
+      'Reduced multi-system swivel-chair operations by ~90%',
+      'Compressed network planning from 5 weeks to hours',
+      'Accelerated cell site deployment cycles by ~30%',
+    ],
+    tools: ['AI-powered site placement', 'Search ring candidate analysis', 'GIS heatmaps for coverage', 'Coverage simulation'],
   },
   {
     id: 'zone2',
-    name: 'Core Network Tower',
-    tag: 'ZONE 02 — GIS & INVENTORY',
-    icon: '📡',
-    color: '#18181b',
-    accentBg: '#f4f4f5',
+    name: 'Infrastructure Zone',
+    tag: 'NETWORK INVENTORY & TOPOLOGY',
+    icon: '🏗️',
     coords: [-73.9712, 40.7614],  // Grand Central area
-    height: 200,
-    desc: 'Consolidated 6+ legacy network intelligence tools into a single unified GIS layer. Fiber routes, neighbor sites, and live inventory in one canvas.',
+    height: 190,
+    desc: 'Interactive geospatial inventory tools for US network infrastructure assets.',
     achievements: [
-      { stat: 90, suffix: '%', label: 'Reduction in tool complexity' },
-      { stat: 6, suffix: '+', label: 'Legacy systems replaced' },
+      { stat: 20, suffix: '%', label: 'Reduction in diagnostic coordination delays' },
+      { stat: 100, suffix: '%', label: 'Visual access to equipment topology' },
     ],
-    tools: ['Mapbox GL', 'Three.js', 'Esri ArcGIS', 'REST APIs', 'WebSockets'],
+    impact: [
+      'Reduced diagnostic coordination delays by 20%',
+      'Visual access to equipment topology',
+      'Streamlined cross-team collaboration',
+    ],
+    tools: ['Equipment hierarchy view', 'Utilization patterns', 'Topology relationships', 'Network mapping'],
   },
   {
     id: 'zone3',
-    name: 'Operations Center',
-    tag: 'ZONE 03 — GENAI NOC COPILOT',
+    name: 'Operations Zone',
+    tag: 'AIRWAVE PERFORMANCE INTELLIGENCE',
     icon: '⚡',
-    color: '#18181b',
-    accentBg: '#f4f4f5',
     coords: [-73.9855, 40.7489],  // Penn Station area
-    height: 160,
-    desc: 'Built the AI-powered NOC copilot that instantly surfaces diagnostics, anomaly patterns, and resolution paths through thousands of real-time network alerts.',
+    height: 170,
+    desc: 'Unified AI-powered network monitoring platform replacing 10+ legacy tools.',
     achievements: [
-      { stat: 50, suffix: '%+', label: 'Manual diagnostic effort reduced' },
-      { stat: 20, suffix: '%', label: 'Operational efficiency gained' },
+      { stat: 10, suffix: 'K+', label: 'Daily anomalies reduced to 5 prioritized tasks' },
+      { stat: 10, suffix: '+', label: 'Legacy tools replaced by one platform' },
     ],
-    tools: ['Gemini AI', 'LangChain', 'Python', 'React', 'Kafka'],
+    impact: [
+      'Reduced 10,000+ daily anomalies to 5 prioritized tasks',
+      'Shifted teams from reactive to proactive management',
+      'Reduced average response latency significantly',
+    ],
+    tools: ['Live geospatial map', 'GenAI performance summaries', 'Real-time anomaly detection', 'Mobile alerting app'],
   },
   {
     id: 'zone4',
-    name: 'Consumer Front',
-    tag: 'ZONE 04 — NETWORK STATUS',
+    name: 'Customer Experience Zone',
+    tag: 'CHECK NETWORK STATUS — SELF-SERVICE',
     icon: '📱',
-    color: '#18181b',
-    accentBg: '#f4f4f5',
     coords: [-73.9800, 40.7549],  // Midtown center
-    height: 90,
-    desc: 'Gave customers direct visibility into network health and outage status. Self-Serve First and Trust by Default became the design principles of the platform.',
+    height: 100,
+    desc: 'Redesigned Verizon\'s outage self-service experience.',
     achievements: [
-      { stat: 40, suffix: '%', label: 'Customer resolution time reduced' },
-      { stat: 1, suffix: 'M+', label: 'Customers with live visibility' },
+      { stat: 40, suffix: '%', label: 'Reduction in outage resolution time' },
+      { stat: 100, suffix: '%', label: 'Inbound support calls measurably reduced' },
     ],
-    tools: ['React Native', 'Maps SDK', 'GraphQL', 'Design System'],
-  },
-  {
-    id: 'hall',
-    name: 'Hall of Achievements',
-    tag: 'CENTRAL — AWARDS & CERTS',
-    icon: '🏛️',
-    color: '#18181b',
-    accentBg: '#f4f4f5',
-    coords: [-73.9780, 40.7520],  // Center
-    height: 260,
-    desc: 'The heart of the command center — celebrating the Innovation Award, professional certifications, and the engineering philosophy behind every platform.',
-    achievements: [
-      { stat: 11, suffix: ' yrs', label: 'Enterprise telecom experience' },
-      { stat: 3, suffix: '', label: 'Professional certifications' },
+    impact: [
+      'Reduced outage resolution time by 40%',
+      'Measurably reduced inbound support calls',
+      'Simplified outage communication flows',
     ],
-    tools: ['SAFe 5', 'CXA UX Analyst', 'Innovation Award'],
-    pedestals: [
-      { label: '🏆', tag: 'SPOTLIGHT AWARD', title: 'Innovation Award 2023', body: 'Recognized for pioneering the Telecom Design Studio — a unified self-serve network engineering platform that transformed manual, multi-tool workflows into a single-pane-of-glass experience.' },
-      { label: '📋', tag: 'CERTIFICATION', title: 'SAFe® 5 Practitioner', body: 'Certified SAFe® 5 Practitioner — expertise in scaled agile frameworks for enterprise-grade product delivery and cross-functional team coordination.' },
-      { label: '🎨', tag: 'CERTIFICATION', title: 'Certified UX Analyst (CXA)', body: 'Certified User Experience Analyst (CXA) — deep human-centered design skills applied to complex enterprise telecom products.' },
-    ],
+    tools: ['Coverage check', 'Service qualification', 'Outage status', 'Self-service tools'],
   },
 ];
 
 // Map center + initial view
 export const MAP_CONFIG = {
-  center: [-73.9800, 40.7549],
+  center: [-73.9810, 40.7555],
   zoom: 14.5,
   pitch: 52,
   bearing: -20,

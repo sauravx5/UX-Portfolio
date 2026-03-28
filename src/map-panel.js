@@ -40,8 +40,19 @@ export function closePanel() {
 
 /* ── Render panel body HTML ──────────────────────────────────────── */
 function renderBody(zone) {
+  // Impact bullets
+  const impactList = zone.impact
+    ? `<ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:5px;">
+        ${zone.impact.map(i => `<li style="font-size:0.8rem;color:var(--panel-fg);line-height:1.5;">${i}</li>`).join('')}
+      </ul>`
+    : '';
+
   let html = `
     <p class="panel-desc">${zone.desc}</p>
+    <div>
+      <span class="panel-section-label">Impact Achieved</span>
+      ${impactList}
+    </div>
     <div>
       <span class="panel-section-label">Key Metrics</span>
       <div class="achievements-grid">
@@ -56,37 +67,14 @@ function renderBody(zone) {
       </div>
     </div>
     <div>
-      <span class="panel-section-label">Technologies</span>
+      <span class="panel-section-label">Key Features</span>
       <div class="tools-wrap">
         ${zone.tools.map(t => `<span class="tool-chip">${t}</span>`).join('')}
       </div>
     </div>
   `;
 
-  // Special: Hall pedestals
-  if (zone.pedestals && zone.pedestals.length) {
-    html += `
-      <div>
-        <span class="panel-section-label">Awards & Certifications</span>
-        <div class="pedestal-list">
-          ${zone.pedestals.map(p => `
-            <div class="pedestal-item">
-              <div class="pedestal-item-top">
-                <span class="ped-icon">${p.label}</span>
-                <div>
-                  <div class="ped-tag">${p.tag}</div>
-                  <div class="ped-title">${p.title}</div>
-                </div>
-              </div>
-              <div class="ped-body">${p.body}</div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-  }
-
-  // Footer CTA hint
+  // Footer hint
   html += `
     <div style="padding: 14px 0 4px; border-top: 1px solid var(--panel-border); margin-top: 4px;">
       <p style="font-family: var(--mono); font-size: 0.68rem; color: var(--panel-muted); letter-spacing: 1px;">

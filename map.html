@@ -48,11 +48,16 @@
     </a>
     <div class="nav-divider"></div>
     <span class="map-nav-title">Network Command Center</span>
-    <span class="map-nav-subtitle font-mono">NYC Metro · 5 Zones Active</span>
+    <span class="map-nav-subtitle font-mono">NYC Metro · 4 Zones Active</span>
     <div class="online-badge">
       <span class="online-dot"></span>
       LIVE
     </div>
+    <div class="nav-divider"></div>
+    <button class="about-btn" id="about-btn" aria-label="About Me">
+      <img src="avatar.jpg" alt="SK" class="about-btn-avatar" />
+      <span>About Me</span>
+    </button>
   </nav>
 
   <!-- Zone Legend -->
@@ -62,16 +67,13 @@
       <span class="legend-dot"></span> Planning
     </span>
     <span class="legend-item" data-zone="zone2">
-      <span class="legend-dot"></span> Network Tower
+      <span class="legend-dot"></span> Infrastructure
     </span>
     <span class="legend-item" data-zone="zone3">
       <span class="legend-dot"></span> Operations
     </span>
     <span class="legend-item" data-zone="zone4">
-      <span class="legend-dot"></span> Consumer
-    </span>
-    <span class="legend-item" data-zone="hall">
-      <span class="legend-dot"></span> Achievements
+      <span class="legend-dot"></span> Customer Experience
     </span>
   </div>
 
@@ -97,6 +99,216 @@
 
   </aside>
 
+  <!-- ═══════════════════════════════════════
+       ABOUT ME MODAL
+  ═══════════════════════════════════════ -->
+  <div id="about-modal" class="about-modal hidden" role="dialog" aria-modal="true" aria-label="About Saurav">
+    <div class="about-modal-inner">
+
+      <!-- Close -->
+      <button class="about-modal-close" id="about-modal-close" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- ─── SECTION 1: PROFILE ───────────────── -->
+      <div class="about-section">
+        <p class="about-supertitle font-mono">:: COMMANDER PROFILE ::</p>
+        <h2 class="about-headline">ABOUT <span class="about-accent">SAURAV</span></h2>
+
+        <div class="about-grid">
+          <!-- Left column -->
+          <div class="about-left">
+
+            <!-- Profile card -->
+            <div class="profile-card">
+              <img src="avatar.jpg" alt="Saurav Kumar" class="profile-card-avatar" />
+              <div class="profile-card-info">
+                <h3 class="profile-name">Saurav Kumar</h3>
+                <p class="profile-role">Lead UX System Architect @ Verizon</p>
+                <p class="profile-exp font-mono">📅 11 Years Experience</p>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="about-bio">
+              <p>Senior UX Strategist with 11 years of experience designing enterprise platforms for telecom network operations, AI-augmented workflows, and geospatial intelligence systems. At Verizon, led UX architecture for platforms that consolidated 10+ legacy tools, cut planning cycles from five weeks to hours, and reduced engineer diagnostic effort by more than 50%.</p>
+              <p>Experienced across the full design lifecycle: user research, information architecture, interaction design, prototyping, and cross-functional stakeholder alignment. Work regularly involves GenAI integration, LLM-powered interfaces, GIS visualization, and Agile delivery within large engineering organizations.</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="about-timeline">
+              <span class="timeline-label font-mono">CAREER TIMELINE</span>
+              <div class="timeline-item">
+                <span class="timeline-dot active"></span>
+                <div class="timeline-content">
+                  <div class="timeline-row">
+                    <strong>Verizon India</strong>
+                    <span class="timeline-date font-mono">2020 – Present</span>
+                  </div>
+                  <p>Lead UX System Architect - Network Systems Portfolio</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div class="timeline-content">
+                  <div class="timeline-row">
+                    <strong>TCS</strong>
+                    <span class="timeline-date font-mono">2014 – 2020</span>
+                  </div>
+                  <p>Senior UX Designer - Technology Business Unit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: Skills -->
+          <div class="about-right">
+            <div class="skill-group">
+              <span class="skill-group-label font-mono">UX STRATEGY</span>
+              <div class="skill-chips">
+                <span>UX Vision &amp; Roadmapping</span><span>Enterprise Design Strategy</span>
+                <span>Design System Governance</span><span>Stakeholder Management</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-group-label font-mono">AI &amp; TECHNICAL</span>
+              <div class="skill-chips">
+                <span>GenAI UX Design</span><span>LLM Interface Design</span>
+                <span>AI-Augmented Workflows</span><span>GIS Visualization</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-group-label font-mono">RESEARCH</span>
+              <div class="skill-chips">
+                <span>User Research</span><span>Usability Testing</span>
+                <span>Journey Mapping</span><span>Behavioral Analytics</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-group-label font-mono">TOOLS</span>
+              <div class="skill-chips">
+                <span>Figma</span><span>Adobe XD</span><span>Sketch</span><span>Spline</span><span>Rive</span>
+                <span>Miro</span><span>Lottie</span><span>Adobe Creative Suite</span>
+                <span>HTML/CSS</span><span>Mapbox</span><span>Google Earth Engine</span>
+                <span>Jira</span><span>Confluence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SECTION 2: AWARDS ───────────────── -->
+      <div class="about-section">
+        <p class="about-supertitle font-mono">:: AWARDS &amp; CERTIFICATIONS ::</p>
+        <div class="awards-list">
+          <div class="award-item">
+            <span class="award-year font-mono">2024</span>
+            <div>
+              <strong>Verizon India MD Award</strong>
+              <p>Strategic contributions to enterprise platform development</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-year font-mono">2024</span>
+            <div>
+              <strong>IIT Delhi Executive Program</strong>
+              <p>Product Innovation and Design Thinking</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-year font-mono">2023</span>
+            <div>
+              <strong>Spotlight Award — Accountability</strong>
+              <p>High-quality UX outcomes across complex systems</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-year font-mono">2022</span>
+            <div>
+              <strong>Spotlight Award — Accountability</strong>
+              <p>Consistent delivery excellence</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-year font-mono">2021</span>
+            <div>
+              <strong>Spotlight Award — Innovation</strong>
+              <p>UX solutions improving platform usability</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SECTION 3: CONTACT ─────────────── -->
+      <div class="about-section contact-section">
+        <p class="about-supertitle font-mono">:: OPEN CHANNEL :: CONTACT COMMAND ::</p>
+        <h3 class="contact-headline">Ready to discuss telecom UX challenges, AI-powered platforms,<br/>or design opportunities? Open a comm channel.</h3>
+
+        <div class="contact-grid">
+          <!-- Contact details -->
+          <div class="contact-details">
+            <div class="contact-stat-row">
+              <span class="contact-stat">11+ <span>Years Experience</span></span>
+              <span class="contact-stat">10+ <span>Enterprise Platforms</span></span>
+            </div>
+            <ul class="contact-list font-mono">
+              <li><span class="cl-label">EMAIL</span><a href="mailto:saurav.kumar1@outlook.com">saurav.kumar1@outlook.com</a></li>
+              <li><span class="cl-label">PHONE</span><a href="tel:+917416459550">+91 7416459550</a></li>
+              <li><span class="cl-label">LINKEDIN</span><a href="https://linkedin.com/in/saurav-kumar-ux-architect" target="_blank">saurav-kumar-ux-architect</a></li>
+              <li><span class="cl-label">LOCATION</span><span>Hyderabad, India</span></li>
+            </ul>
+          </div>
+
+          <!-- Contact form -->
+          <form class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="cf-name" class="font-mono">NAME</label>
+              <input type="text" id="cf-name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email" class="font-mono">EMAIL</label>
+              <input type="email" id="cf-email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-msg" class="font-mono">MESSAGE</label>
+              <textarea id="cf-msg" rows="4" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="transmit-btn font-mono">▶ TRANSMIT MESSAGE</button>
+            <p class="form-success hidden" id="form-success">✓ Message transmitted. Standing by for response.</p>
+          </form>
+        </div>
+      </div>
+
+    </div><!-- /.about-modal-inner -->
+  </div><!-- /#about-modal -->
+
   <script type="module" src="src/map-main.js"></script>
+
+  <script>
+    // About modal open/close
+    const modal = document.getElementById('about-modal');
+    document.getElementById('about-btn').addEventListener('click', () => {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('about-modal-close').addEventListener('click', () => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+    modal.addEventListener('click', e => {
+      if (e.target === modal) { modal.classList.add('hidden'); document.body.style.overflow = ''; }
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { modal.classList.add('hidden'); document.body.style.overflow = ''; }
+    });
+    // Contact form
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').classList.remove('hidden');
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>

@@ -422,3 +422,212 @@ html, body { width: 100%; height: 100%; font-family: var(--font); }
   #zone-panel.open { transform: translateY(0); }
   #zone-legend { display: none; }
 }
+
+/* ════════════════════════════════════════════════
+   ABOUT ME — Nav Button
+   ════════════════════════════════════════════════ */
+.about-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--panel-fg); color: var(--panel-bg);
+  border: 1px solid var(--panel-fg);
+  border-radius: var(--r); padding: 6px 14px;
+  font-family: var(--font); font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.about-btn:hover { background: var(--bg-1); color: var(--fg); border-color: var(--bg-1); }
+.about-btn-avatar {
+  width: 24px; height: 24px; border-radius: 50%;
+  object-fit: cover; border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* ════════════════════════════════════════════════
+   ABOUT ME — Full-Screen Modal
+   ════════════════════════════════════════════════ */
+.about-modal {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+  overflow-y: auto;
+  display: flex; justify-content: center; align-items: flex-start;
+  padding: 32px 24px 80px;
+}
+.about-modal.hidden { display: none !important; }
+
+.about-modal-inner {
+  background: #fff; border-radius: var(--r-xl);
+  width: 100%; max-width: 960px;
+  border: 1px solid var(--panel-border);
+  position: relative; padding: 40px 40px 48px;
+  display: flex; flex-direction: column; gap: 40px;
+}
+
+.about-modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px; border-radius: var(--r);
+  border: 1px solid var(--panel-border); background: none;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--panel-muted); transition: all 0.15s;
+}
+.about-modal-close:hover { background: var(--border-light); color: var(--panel-fg); }
+
+/* Section wrapper */
+.about-section {
+  display: flex; flex-direction: column; gap: 20px;
+  padding-bottom: 40px; border-bottom: 1px solid var(--panel-border);
+}
+.about-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* Header elements */
+.about-supertitle {
+  font-size: 0.65rem; letter-spacing: 3px; color: var(--panel-muted);
+  text-transform: uppercase;
+}
+.about-headline {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900;
+  letter-spacing: -1.5px; color: var(--panel-fg); line-height: 1;
+}
+.about-accent {
+  color: var(--panel-fg);
+  border-bottom: 3px solid var(--panel-fg);
+}
+
+/* Two-column grid */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 400px; gap: 32px;
+}
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+
+.about-left { display: flex; flex-direction: column; gap: 20px; }
+.about-right { display: flex; flex-direction: column; gap: 16px; }
+
+/* Profile card */
+.profile-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px; border: 1px solid var(--panel-border);
+  border-radius: var(--r-lg); background: #fafafa;
+}
+.profile-card-avatar {
+  width: 60px; height: 60px; border-radius: var(--r-lg);
+  object-fit: cover; flex-shrink: 0;
+  border: 1px solid var(--panel-border);
+}
+.profile-name { font-size: 1rem; font-weight: 700; color: var(--panel-fg); letter-spacing: -0.3px; }
+.profile-role { font-size: 0.78rem; color: var(--panel-muted); margin-top: 2px; }
+.profile-exp { font-size: 0.68rem; color: var(--panel-muted); margin-top: 4px; }
+
+/* Bio */
+.about-bio { display: flex; flex-direction: column; gap: 12px; }
+.about-bio p { font-size: 0.875rem; color: var(--panel-fg); line-height: 1.7; }
+
+/* Career Timeline */
+.about-timeline { display: flex; flex-direction: column; gap: 12px; }
+.timeline-label {
+  font-size: 0.6rem; letter-spacing: 2.5px; color: var(--panel-muted);
+  text-transform: uppercase; display: block; margin-bottom: 4px;
+}
+.timeline-item {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.timeline-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--border-light); border: 2px solid var(--panel-border);
+  flex-shrink: 0; margin-top: 4px;
+}
+.timeline-dot.active { background: var(--panel-fg); border-color: var(--panel-fg); }
+.timeline-content { flex: 1; }
+.timeline-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 8px; margin-bottom: 2px;
+}
+.timeline-content strong { font-size: 0.875rem; font-weight: 700; color: var(--panel-fg); }
+.timeline-date { font-size: 0.68rem; color: var(--panel-muted); }
+.timeline-content p { font-size: 0.78rem; color: var(--panel-muted); }
+
+/* Skills */
+.skill-group {
+  padding: 14px; border: 1px solid var(--panel-border);
+  border-radius: var(--r-lg); display: flex; flex-direction: column; gap: 10px;
+}
+.skill-group-label {
+  font-size: 0.6rem; letter-spacing: 2px; color: var(--panel-muted);
+  text-transform: uppercase;
+}
+.skill-chips {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.skill-chips span {
+  font-size: 0.72rem; font-weight: 500;
+  padding: 4px 10px; border: 1px solid var(--panel-border);
+  border-radius: 999px; color: var(--panel-fg); background: #fff;
+  transition: background 0.12s;
+}
+.skill-chips span:hover { background: var(--border-light); }
+
+/* ── Awards Section ─────────────────────────────────────────── */
+.awards-list { display: flex; flex-direction: column; gap: 0; }
+.award-item {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 14px 0; border-bottom: 1px solid var(--panel-border);
+}
+.award-item:last-child { border-bottom: none; }
+.award-year {
+  font-size: 0.72rem; color: var(--panel-muted);
+  min-width: 40px; padding-top: 2px; letter-spacing: 0.5px;
+}
+.award-item strong { font-size: 0.875rem; font-weight: 700; color: var(--panel-fg); display: block; }
+.award-item p { font-size: 0.78rem; color: var(--panel-muted); margin-top: 2px; }
+
+/* ── Contact Section ─────────────────────────────────────────── */
+.contact-headline {
+  font-size: 0.95rem; color: var(--panel-fg); line-height: 1.6; font-weight: 400;
+}
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+@media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-stat-row {
+  display: flex; gap: 24px; margin-bottom: 20px;
+}
+.contact-stat {
+  font-size: 1.8rem; font-weight: 900; color: var(--panel-fg);
+  letter-spacing: -1.5px; line-height: 1;
+}
+.contact-stat span { font-size: 0.68rem; font-weight: 500; color: var(--panel-muted); letter-spacing: 1.5px; display: block; text-transform: uppercase; margin-top: 2px; }
+
+.contact-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.contact-list li { display: flex; align-items: center; gap: 12px; font-size: 0.8rem; }
+.cl-label {
+  font-size: 0.58rem; letter-spacing: 2px; color: var(--panel-muted);
+  min-width: 64px; text-transform: uppercase;
+}
+.contact-list a { color: var(--panel-fg); text-decoration: none; font-weight: 500; }
+.contact-list a:hover { text-decoration: underline; }
+
+/* Contact form */
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group label { font-size: 0.6rem; letter-spacing: 2px; color: var(--panel-muted); text-transform: uppercase; }
+.form-group input, .form-group textarea {
+  font-family: var(--font); font-size: 0.875rem;
+  padding: 10px 12px; border: 1px solid var(--panel-border);
+  border-radius: var(--r); outline: none; color: var(--panel-fg);
+  background: #fff; transition: border 0.15s; resize: vertical;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--panel-fg); }
+.transmit-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--panel-fg); color: #fff;
+  border: none; cursor: pointer; border-radius: var(--r);
+  font-size: 0.78rem; letter-spacing: 2px; padding: 12px 20px;
+  font-weight: 600; transition: opacity 0.15s; align-self: flex-start;
+}
+.transmit-btn:hover { opacity: 0.85; }
+.form-success {
+  font-size: 0.78rem; color: #16a34a; font-family: var(--mono);
+  margin-top: 4px;
+}
+
+/* Scrollbar for modal */
+.about-modal::-webkit-scrollbar { width: 5px; }
+.about-modal::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 3px; }
+
